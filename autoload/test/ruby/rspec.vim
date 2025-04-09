@@ -34,7 +34,7 @@ function! test#ruby#rspec#executable() abort
   elseif filereadable('./bin/rspec') && get(g:, 'test#ruby#use_binstubs', 1)
     return './bin/rspec'
   elseif filereadable('Gemfile') && get(g:, 'test#ruby#bundle_exec', 1)
-    return 'bundle exec rspec'
+    return 'rx dev task -- rspec'
   else
     return 'rspec'
   endif
